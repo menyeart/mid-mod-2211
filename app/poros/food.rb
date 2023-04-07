@@ -6,7 +6,7 @@ class Food
 
   def initialize(info)
     @code = info[:code]
-    @description = info[:descripton]
+    @description = info[:description]
     @brand_owner = info[:brand_owner]
     @ingredients = info[:ingredients]
   end
