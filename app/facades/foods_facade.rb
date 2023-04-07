@@ -1,13 +1,18 @@
 class FoodsFacade
-  def initialize
+  def initialize(food)
+    @searched_foods ||= FoodService.food_search(food)
   end
 
-  def total_items(food)
-    FoodService.food_search(food)[:totalHits]
+  def get_foods
+    @searched_foods
   end
 
-  def food_search(food)
-    FoodService.food_search(food)[:foods].map do |food|
+  def total_items
+    get_foods[:totalHits]
+  end
+
+  def food_search
+    get_foods[:foods].map do |food|
       Food.new(get_info(food))
     end
   end
@@ -20,8 +25,4 @@ class FoodsFacade
     attributes[:ingredients] = food[:ingredients]
     attributes
   end
-
-
-
-
 end
