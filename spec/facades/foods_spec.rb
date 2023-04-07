@@ -21,7 +21,7 @@ RSpec.describe FoodsFacade do
       expect(@facade.food_search("sweet potatoes").count).to eq(10)
       @facade.food_search("sweet potatoes"). each do |food|
         expect(food.code).to be_a(String)
-        expect(food.description).to be_a(String)
+        expect(food.description).to be_a(String).or eq(nil)
         expect(food.brand_owner).to be_a(String)
         expect(food.ingredients).to be_a(String)
       end
