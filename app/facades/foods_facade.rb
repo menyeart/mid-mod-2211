@@ -18,6 +18,7 @@ class FoodsFacade
     attributes[:description] = food[:description]
     attributes[:brand_owner] = food[:brandOwner]
     attributes[:ingredients] = food[:ingredients]
+    attributes
   end
 
 
