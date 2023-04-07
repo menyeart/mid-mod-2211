@@ -1,0 +1,10 @@
+<h3>Total Foods Count: <%=@foods.total_items%></h3>
+
+<%@foods.food_search.each do |food| %>
+<ul>
+<li>GTIN/UPC: <%= food.code %></li>
+<li>Description: <%= food.description %></li>
+<li>Brand Owner: <%= food.brand_owner %></li>
+<li>Ingredients: <%= food.ingredients %></li>
+</ul>
+<% end %>
